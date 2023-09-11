@@ -6,7 +6,7 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "build": "webpack-cli ./src/index.tsx",
+    "build": "rm -rf ./dist && webpack-cli --env ENV=production",
     "format": "prettier --write src",
     "lint": "eslint --ext .ts,.tsx src --fix",
     "start": "webpack serve --port 3000",
@@ -32,6 +32,7 @@
     "jest-environment-jsdom": "^29.6.4",
     "prettier": "^3.0.3",
     "style-loader": "^3.3.3",
+    "terser-webpack-plugin": "^5.3.9",
     "ts-jest": "^29.1.1",
     "ts-loader": "^9.4.4",
     "typescript": "^5.2.2",
