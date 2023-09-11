@@ -8,17 +8,18 @@ function src(subdir) {
 
 module.exports = {
   devtool: prod ? undefined : "source-map",
-  entry: "./src/index.tsx",
   mode: prod ? "production" : "development",
   module: {
     rules: [
       {
-        test: /\.(ts|tsx)$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
-        resolve: {
-          extensions: [".ts", ".tsx"],
+        use: {
+          loader: "ts-loader",
+          options: {
+            configFile: "tsconfig.prod.json",
+          },
         },
-        use: "ts-loader",
       },
       {
         test: /\.css$/,

@@ -13,10 +13,6 @@
     "module": "CommonJS",
     "moduleResolution": "Node",
     "noEmit": false,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
     "noUnusedLocals": false,
     "noUnusedParameters": true,
     "outDir": "dist",
@@ -26,9 +22,6 @@
     "skipLibCheck": true,
     "sourceMap": false,
     "strict": true,
-    "strictFunctionTypes": true,
-    "strictNullChecks": true,
-    "strictPropertyInitialization": true,
     "target": "ES5"
   },
   "include": ["src"]
