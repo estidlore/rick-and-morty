@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const path = require("path");
 
@@ -27,7 +28,7 @@ module.exports = (env) => {
         },
         {
           test: /\.css$/,
-          use: ["style-loader", "css-loader"],
+          use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
         },
         {
           test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -64,6 +65,9 @@ module.exports = (env) => {
     plugins: [
       new HtmlWebpackPlugin({
         template: "./src/index.html",
+      }),
+      new MiniCssExtractPlugin({
+        filename: "styles.css",
       }),
     ],
     resolve: {
