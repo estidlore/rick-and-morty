@@ -6,14 +6,13 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "build": "NODE_ENV=production webpack",
-    "format": "prettier --config .prettierrc.js --write src/**/*.{ts,tsx,scss}",
+    "build": "webpack-cli ./src/index.tsx",
+    "format": "prettier --write src",
     "lint": "eslint --ext .ts,.tsx src --fix",
     "start": "webpack serve --port 3000",
     "test": "jest"
   },
   "dependencies": {
-    "eslint-config-estidlore": "github:estidlore/eslint-config-estidlore",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -23,10 +22,10 @@
     "@types/jest": "^29.5.4",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
-    "@typescript-eslint/eslint-plugin": "^6.6.0",
     "@typescript-eslint/parser": "^6.6.0",
     "css-loader": "^6.8.1",
     "eslint": "^8.49.0",
+    "eslint-config-estidlore": "github:estidlore/eslint-config-estidlore",
     "html-webpack-plugin": "^5.5.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.6.4",
