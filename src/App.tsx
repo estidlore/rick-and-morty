@@ -1,9 +1,15 @@
 import React from "react";
 
-const App = (): JSX.Element => (
-  <div>
-    <p>{"Rick and Morty"}</p>
-  </div>
-);
+import { GraphQLProvider } from "utils/graphql";
+
+const App = (): JSX.Element => {
+  return (
+    <GraphQLProvider>
+      <div className={"bg-red-950 min-h-screen p-4 text-red-50"}>
+        <p className={"font-bold mb-8 text-4xl"}>{"Rick and Morty"}</p>
+      </div>
+    </GraphQLProvider>
+  );
+};
 
 export { App };
