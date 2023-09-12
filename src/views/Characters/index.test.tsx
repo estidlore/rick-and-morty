@@ -1,11 +1,12 @@
-import { MockedProvider, MockedResponse } from "@apollo/client/testing";
+import type { MockedResponse } from "@apollo/client/testing";
+import { MockedProvider } from "@apollo/client/testing";
 import { render, screen, waitFor } from "@testing-library/react";
 import { GraphQLError } from "graphql";
 import React from "react";
 
 import { Characters } from ".";
-import { GQCharacters } from "./types";
 import { GET_CHARACTERS } from "./queries";
+import type { GQCharacters } from "./types";
 
 describe("Characters", () => {
   const getCharactersMock: MockedResponse<GQCharacters> = {
@@ -33,10 +34,10 @@ describe("Characters", () => {
   };
 
   const getCharactersErrorMock: MockedResponse<GQCharacters> = {
+    error: new GraphQLError("Error getting characters"),
     request: {
       query: GET_CHARACTERS,
     },
-    error: new GraphQLError("Error getting characters"),
   };
 
   it("Render characters", async () => {
