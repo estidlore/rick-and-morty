@@ -18,11 +18,11 @@
     "outDir": "dist",
     "removeComments": true,
     "resolveJsonModule": true,
-    "rootDir": "src",
+    "rootDir": ".",
     "skipLibCheck": true,
-    "sourceMap": false,
+    "sourceMap": true,
     "strict": true,
     "target": "ES5"
   },
-  "include": ["src"]
+  "include": ["src", "jest.setup.ts"]
 }
